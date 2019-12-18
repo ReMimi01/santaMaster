@@ -1,0 +1,18 @@
+.container {
+    background-image:url(/assets/Merry-Christmas-stars-balls-decoration_iphone_1242x2688.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.days {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.day {
+    width: 70px;
+    margin: 10px;
+}
