@@ -12,7 +12,7 @@ export class CalendarsRepository {
     private static instance: CalendarsRepository;
     private connection: MysqlConnection = MysqlConnection.getInstance();
 
-    private table: string = 'calendars';
+    private table: string = 'calendar';
 
     static getInstance() {
         if (!this.instance) {

@@ -1,0 +1,29 @@
+.conceptpage{
+  width: 80%;
+  margin: auto;
+}
+
+.div{
+  color : white;
+  text-align: justify;
+}
+
+h3{
+  text-align: center;
+}
+
+span, h3{
+  color : #E71D36;
+}
+.example-button-row button{
+  margin-right: 8px;
+}
+
+.buttonconceptpage{
+  display: flex;
+  justify-content: center;
+}
+
+.mat-raised-button{
+  background-color:#E71D36;;
+} 
