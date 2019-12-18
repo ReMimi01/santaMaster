@@ -1,7 +1,7 @@
 export class User {
     pseudo :string;
-    prenom : string;
-    nom : string;
+    firstname : string;
+    lastname : string;
     email : string;
     password : string;
 }

@@ -40,10 +40,10 @@ export class FormulaireComponent implements OnInit {
     setTimeout(this.changepage, 1000);
     let newUser = {
     pseudo : this.userForm.value.pseudo,
-    prenom : this.userForm.value.prenom,
-    nom : this.userForm.value.adress.nom,
-    email : this.userForm.value.adress.email,
-    password : this.userForm.value.adress.password,
+    firstname : this.userForm.value.firstname,
+    lastname : this.userForm.value.lastname,
+    email : this.userForm.value.email,
+    password : this.userForm.value.password,
     }
       this.formulaireService.createUser(newUser).subscribe(
         result=>{

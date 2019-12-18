@@ -12,7 +12,7 @@ export class FormulaireService {
   constructor(private http : HttpClient, private router: Router) { }
 
   createUser(newUser){
-    return this.http.post(`${this.userUrl}/formulaire`, newUser);
+    return this.http.post(`${this.userUrl}/users/formulaire`, newUser);
   }
   
   changepage(){
