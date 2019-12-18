@@ -13,8 +13,8 @@ export class FormulaireComponent implements OnInit {
 
   userForm = this.formbuilder.group({
     pseudo: ['', [Validators.required, Validators.minLength(4)] ],
-    prenom: ['',[Validators.required]],
-    nom: ['',[Validators.required]],
+    firstname: ['',[Validators.required]],
+    lastname: ['',[Validators.required]],
     email: ['',[Validators.required]],
     password: ['',[Validators.required, Validators.minLength(4)]],
     checkbox1: ['',[Validators.required]],
@@ -30,12 +30,13 @@ export class FormulaireComponent implements OnInit {
   }
 
   addUser(){
-    let newUser = {
+    console.log
+    let newUser = {
     pseudo : this.userForm.value.pseudo,
-    prenom : this.userForm.value.prenom,
-    nom : this.userForm.value.adress.nom,
-    email : this.userForm.value.adress.email,
-    password : this.userForm.value.adress.password,
+    firstname : this.userForm.value.firstname,
+    lastname : this.userForm.value.lastname,
+    email : this.userForm.value.email,
+    password : this.userForm.value.password,
     }
       this.formulaireService.createUser(newUser).subscribe(
         result=>{

@@ -4,7 +4,7 @@
         <form [formGroup]="userForm" (ngSubmit)="addUser()">
             <mat-form-field appearance="outline">
                 <mat-label>Nom d'utilisateur</mat-label>
-                <input matInput formControlName="pseudo">
+                <input matInput formControlName="pseudo" required>
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Prénom</mat-label>
@@ -32,7 +32,7 @@
             </div>
             <div class='buttonconceptpage'>
                     <div class="example-button-row">
-                        <button type="submit" mat-raised-button [disabled]="!userForm.valid" routerLink='formulaire'>Continuer</button>
+                        <button type="submit" mat-raised-button [disabled]="!userForm.valid" >Continuer</button>
                     </div>
             </div>
         </form>

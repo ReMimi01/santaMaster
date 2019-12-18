@@ -11,6 +11,6 @@ export class FormulaireService {
   constructor(private http : HttpClient) { }
 
   createUser(newUser){
-    return this.http.post(`${this.userUrl}/formulaire`, newUser);
+    return this.http.post(`${this.userUrl}/users/formulaire`, newUser);
   }
 }
