@@ -1,0 +1,36 @@
+.baseformulaire{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.engagement{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.buttonconceptpage{
+    display: flex;
+    justify-content: center;
+}
+  
+.mat-checkbox-layout{
+    margin-bottom: 16px;
+}
+.mat-raised-button{
+    background-color:#E71D36;;
+} 
+
+mat-label, p, mat-checkbox, li{
+    color:white
+}
+/* Border */
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white;
+}
+  /* Font color */
+input.mat-input-element {
+    color: white;
+}
+
+
