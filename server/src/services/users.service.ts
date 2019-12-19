@@ -48,6 +48,14 @@ export class UsersService {
     }
 
     /**
+     * Login in as an user
+     * @param user 
+     */
+    login(user: any): Promise<User[]> {
+      return this.repository.login();
+    }
+
+    /**
      * Update the user in parameter and return a promise which contains the updated user.
      * @param user user to update
      */
