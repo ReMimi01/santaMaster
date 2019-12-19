@@ -11,7 +11,7 @@
     text-align: center;
 }
 
-.form {
+.formAdd {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
@@ -27,6 +27,11 @@
 .formImage {
     border: none;
     width: 100%;
+    background-color: #E71D36;
+
+    input{
+        color: white;
+    }
 }
 
 .buttonAddVote {
