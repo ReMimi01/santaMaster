@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { FormulaireComponent } from './pages/formulaire/formulaire.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material'
+import { MatInputModule, MatCardModule } from '@angular/material'
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,6 +18,8 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
 import { AddVotesComponent } from './pages/add-votes/add-votes.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { RankingPageComponent } from './pages/ranking-page/ranking-page.component';
+import { ParticipationComponent } from './pages/participation/participation.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,7 @@ import { RankingPageComponent } from './pages/ranking-page/ranking-page.componen
     LandingPagesComponent,
     FormulaireComponent,
     AddVotesComponent,
-    RankingPageComponent,
+    ParticipationComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,10 @@ import { RankingPageComponent } from './pages/ranking-page/ranking-page.componen
     MatMenuModule,
     BrowserAnimationsModule,
     MatIconModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCardModule,
+    MatButtonModule, 
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
