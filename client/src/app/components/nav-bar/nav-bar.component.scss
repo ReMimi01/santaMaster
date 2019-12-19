@@ -3,13 +3,15 @@
     height: 7%;
     background-color: #E71D36;
     position: absolute;
+    top: 0;
+    left: 0;
+}
 
-    .menu{
-        color: white;
-        background-color: #E71D36;
-        border: none;
-        float: right;
-        margin-top: 3%;
-        margin-right: 3%;
-    }
+.menu{
+    color: white;
+    background-color: #E71D36;
+    border: none;
+    float: right;
+    margin-top: 3%;
+    margin-right: 3%;
 }
