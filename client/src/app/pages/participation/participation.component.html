@@ -3,7 +3,7 @@
         <h4>Avatar</h4>
             <form [formGroup] = "uploadForm"  (ngSubmit)="onSubmit()" class='uploadavatar'>
                 <div class='buttonselected'>
-                    <input type="file" name="avatar" (change)="onFileSelect($event)" />
+                    <input type="file" (change)="onFileSelect($event)" />
                 </div>
                 <div class="example-button-row">
                     <button mat-raised-button type="submit">Upload</button>
