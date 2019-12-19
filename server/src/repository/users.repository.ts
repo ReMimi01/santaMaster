@@ -35,6 +35,16 @@ export class UsersRepository {
     }
 
     /**
+     * Login Make a query to the database to retrive all users and return it in a promise.
+     */
+    findByEmail(email: string): Promise<User> {
+      return this.connection.query(`SELECT * from ${this.table} WHERE email = ?`, [email])
+      .then((results: any) => {
+        return results.map((user: any) => new User(user));
+      });
+    }
+
+    /**
      * Make a query to the database to retrieve one user by its id in parameter. 
      * Return the user found in a promise.
      * @param id user id
@@ -65,10 +75,19 @@ export class UsersRepository {
      */
     update(user: User) {
       return this.connection.query(
-        `UPDATE ${this.table} SET pseudo = ?, lastname = ?, email = ? WHERE id = ?`,
-        [user.pseudo, user.lastname, user.email,user.id]
+        `UPDATE ${this.table} SET pseudo = ?, lastname = ?, email = ?, avatar = ? WHERE id = ?`,
+        [user.pseudo, user.lastname, user.email,user.avatar, user.id]
       ).then(() => {
         return this.findById(user.id);
+      });
+    }
+
+    updateAvatar(avatar: string, userId: number){
+      return this.connection.query(
+        `UPDATE ${this.table} SET avatar = ? WHERE id = ?`,
+        [avatar, userId]
+      ).then(() => {
+        return this.findById(userId);
       });
     }
 

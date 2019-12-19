@@ -5,6 +5,8 @@ import loaders from './loaders';
 import { CalendarsController } from './controller/calendars.controller';
 import { PostsController } from './controller/posts.controller';
 import { ActionsController } from './controller/actions.controller';
+import { AuthController } from './controller/auth.controller';
+
 
 async function startServer() {
     // Récupération de l'application initiale
@@ -18,6 +20,7 @@ async function startServer() {
     CalendarsController(app);
     UsersController(app);
     ActionsController(app);
+    AuthController(app);
 
     // Démarrage du serveur une fois que tout est correctement init
     app.listen(3000, () => console.log('Express server  is running'));
