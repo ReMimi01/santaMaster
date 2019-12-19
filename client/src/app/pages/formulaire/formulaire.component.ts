@@ -42,12 +42,12 @@ export class FormulaireComponent implements OnInit {
     email : this.userForm.value.email,
     password : this.userForm.value.password,
     }
-      this.formulaireService.createUser(newUser).subscribe(
-        result=>{
-          console.log(result)
-        }
-      );
-      setTimeout(this.test.bind(this),1000);
+    this.formulaireService.createUser(newUser).subscribe(
+      result=>{
+        console.log(result)
+      }
+    );
+    setTimeout(this.test.bind(this),1000);
   }
 
 
