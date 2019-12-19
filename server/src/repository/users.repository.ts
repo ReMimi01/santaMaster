@@ -40,7 +40,7 @@ export class UsersRepository {
     findByEmail(email: string): Promise<User> {
       return this.connection.query(`SELECT * from ${this.table} WHERE email = ?`, [email])
       .then((results: any) => {
-        return results.map((user: any) => new User(user));
+        return results[0];
       });
     }
 
