@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { FormulaireService } from 'src/app/shared/formulaire.service';
 import { User } from 'src/app/shared/user';
 import { Calendar } from 'src/app/shared/calendar'
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-participation',
@@ -15,11 +16,12 @@ export class ParticipationComponent implements OnInit {
   uploadForm: FormGroup;
   SERVEUR_URL = "http://localhost:3000/users/upload-avatar"
 
-  constructor(private httpClient : HttpClient, private fromBuilder : FormBuilder, private formulaireService : FormulaireService) { }
+  constructor(public dialog: MatDialog, private httpClient : HttpClient, private fromBuilder : FormBuilder, private formulaireService : FormulaireService) { }
 
   selectedFile: File;
   user : User;
   calendars : Calendar;
+  calendar: Calendar;
 
   
   ngOnInit() {
@@ -64,6 +66,7 @@ export class ParticipationComponent implements OnInit {
   }
 
 
+  
 
 
 }

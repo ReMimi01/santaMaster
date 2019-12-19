@@ -18,6 +18,14 @@ export class FormulaireService {
     return this.http.post(`${this.userUrl}/users/formulaire`, newUser);
   }
   
+  getRandom() {
+    return Math.random();
+  }
+
+  createCalendar(newCalendar ){
+    return this.http.post(`${this.userUrl}/calendars/`, newCalendar);
+  }
+
   changepage(){
     this.router.navigate(['']);
   }

@@ -34,7 +34,6 @@ export class FormulaireComponent implements OnInit {
     this.router.navigate(['/participation'])
   }
   addUser(){
-    
     let newUser = {
     pseudo : this.userForm.value.pseudo,
     firstname : this.userForm.value.firstname,

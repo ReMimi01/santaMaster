@@ -16,15 +16,19 @@
     <h3>Mes Participations</h3>
     <div class='participationencours'>
         <div *ngFor='let calendar of calendars'>
-            <a routerLink='/calendar'>{{ calendar.name }}</a>
-
+            <mat-card class='cardparticipation'>
+                <span>{{ calendar.name }}</span>
+                <div class="example-button-row" class='buttoncardparticipation'>
+                    <button  mat-raised-button routerLink='/calendrier'>Voir</button>
+                </div>
+            </mat-card>
         </div>
 
     
     </div>
     <div class='buttonparticipationpage'>
         <div class="example-button-row">
-            <button mat-raised-button>Créer un Calendrier</button>
+            <button mat-raised-button routerLink="/creationCalendrier">Créer un Calendrier</button>
         </div>
         <div class="example-button-row">
             <button mat-raised-button>Rejoindre un Calendrier</button>
