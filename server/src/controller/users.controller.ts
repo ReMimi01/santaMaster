@@ -42,7 +42,7 @@ export const UsersController = (app: Application) => {
     /**
      * Create a new user from a JSON body and return the created user in JSON.
      */
-    router.post('/', (req: Request, res: Response) => {
+    router.post('/formulaire', (req: Request, res: Response) => {
       const user: User = req.body; // Automatically transform in a User object
 
       usersService.create(user).then(result => {

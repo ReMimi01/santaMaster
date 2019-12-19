@@ -1,9 +1,7 @@
 
   import bodyParser from 'body-parser';
   import cors from 'cors';
-  import { Application } from 'express';
-  
- 
+  import { Application } from 'express'; 
 
   export default async ( app: Application) => {
 

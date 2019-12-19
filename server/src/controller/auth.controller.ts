@@ -1,9 +1,8 @@
 import { User } from '../models/user';
 import { UsersService } from '../services/users.service';
 import express, { Router, Request, Response, Application } from 'express';
-import * as jwt from 'jsonwebtoken';
 
-export const LoginController = (app: Application) => {
+export const AuthController = (app: Application) => {
 
     const router: Router = express.Router();
     const usersService = UsersService.getInstance();
@@ -11,13 +10,13 @@ export const LoginController = (app: Application) => {
     /*
     * Login
     */
-    router.post('/', (req: Request, res: Response) => {
+    router.post('/login', (req: Request, res: Response) => {
         const user: User = req.body; // Automatically transform in a User object
-        usersService.login(user)
+        usersService.login(user.email, user.password)
         .then(result => user ? res.json(result) : res.status(400).send('Username or password is incorrect'))
         .catch(err => console.log(err));
         
     })
 
-    app.use('/login', router);
+    app.use('/auth', router);
 }

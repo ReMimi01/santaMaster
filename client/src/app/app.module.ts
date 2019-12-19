@@ -20,7 +20,7 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
   declarations: [
     AppComponent,
     NavBarComponent,
-    CalendarComponent
+    CalendarComponent,
     LandingPagesComponent,
     FormulaireComponent,
   ],

@@ -37,8 +37,8 @@ export class UsersRepository {
     /**
      * Login Make a query to the database to retrive all users and return it in a promise.
      */
-    login(): Promise<User[]> {
-      return this.connection.query(`SELECT email, password from ${this.table}`)
+    findByEmail(email: string): Promise<User> {
+      return this.connection.query(`SELECT * from ${this.table} WHERE email = ?`, [email])
       .then((results: any) => {
         return results.map((user: any) => new User(user));
       });
