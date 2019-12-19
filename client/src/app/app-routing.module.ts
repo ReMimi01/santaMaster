@@ -11,7 +11,8 @@ const routes: Routes = [
   { path :'formulaire', component : FormulaireComponent},
   { path: 'calendar', component: CalendarComponent },
   { path: 'ba', component: AddVotesComponent },
-  { path: 'classement', component: RankingPageComponent }
+  { path: 'classement', component: RankingPageComponent },
+  { path: 'connexion', component:}
 ];
 
 @NgModule({
