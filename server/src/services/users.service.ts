@@ -55,6 +55,10 @@ export class UsersService {
       return this.repository.update(user);
     }
 
+    updateAvatar(avatar: string, userId: number ): Promise<any> {
+      return this.repository.updateAvatar(avatar, userId);
+    }
+
     /**
      * Delete the user related to the id in parameter. Return an empty promise.
      * @param id user id

@@ -42,7 +42,7 @@ export const UsersController = (app: Application) => {
     /**
      * Create a new user from a JSON body and return the created user in JSON.
      */
-    router.post('/', (req: Request, res: Response) => {
+    router.post('/formulaire', (req: Request, res: Response) => {
       const user: User = req.body; // Automatically transform in a User object
 
       usersService.create(user).then(result => {
@@ -52,6 +52,34 @@ export const UsersController = (app: Application) => {
           console.log(err);
         })
     });
+
+        /**
+     * Create a new avatar from a JSON body and return the created user in JSON.
+     */
+     
+    router.post('/upload-avatar', async (req : Request, res : Response) => {
+      try {
+          if(!req.files) {
+              res.send({
+                  status: false,
+                  message: 'No file uploaded'
+              });
+          } else {
+              //Use the name of the input field (i.e. "avatar") to retrieve the uploaded file
+              let avatar : any = req.files.avatar;
+              
+              //Use the mv() method to place the file in upload directory (i.e. "uploads")
+              avatar.mv('./uploads/' + avatar.name);
+              usersService.updateAvatar(avatar, 1)
+                .then(user => {
+                  res.send(user);
+                  //send response
+                });
+          }
+      } catch (err) {
+          res.status(500).send(err);
+      }
+  });
 
     /**
      * Update a user relative to its id and return the updated user in JSON.
