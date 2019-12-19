@@ -15,6 +15,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import { CalendarComponent } from './pages/calendar/calendar.component';
+import { ConnectionComponent } from './pages/connection/connection.component';
 import { AddVotesComponent } from './pages/add-votes/add-votes.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { RankingPageComponent } from './pages/ranking-page/ranking-page.component';
@@ -28,8 +29,10 @@ import { RouterModule } from '@angular/router';
     CalendarComponent,
     LandingPagesComponent,
     FormulaireComponent,
+    ConnectionComponent,
     AddVotesComponent,
     ParticipationComponent,
+    RankingPageComponent
   ],
   imports: [
     BrowserModule,

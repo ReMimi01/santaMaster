@@ -13,6 +13,7 @@ import morgan from 'morgan';
     app.use(cors());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
+    app.use('/uploads', express.static('uploads'));
     // enable files upload
     app.use(fileUpload({
     createParentPath: true

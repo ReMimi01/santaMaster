@@ -2,10 +2,10 @@
     <mat-tab-group>
         <mat-tab label="Partager">
             <form [formGroup] = "uploadForm" (ngSubmit)="onSubmit()">
-                <h2 class="titleAddVote">Poste ta bonne action du jour</h2>
+                <h2 class="titleAddVote">TA BONNE ACTION DU JOUR</h2>
                     <div class="formAdd">  
                         <p>Description :</p>
-                        <textarea rows="5" cols="15" type="text" id="detail" class="formDescription"></textarea>
+                        <textarea formControlName="detail" rows="5" cols="15" type="text" id="detail" class="formDescription" ></textarea>
                         <p>Photo :</p>
                         <input type="file" name="action" (change)="onFileSelect($event)" class="formImage" />
                         <div >
@@ -16,7 +16,7 @@
         </mat-tab>
 
         <mat-tab label="Voter"> 
-            <h2 class="titleAddVote">Vote pour la bonne action du jour</h2>
+            <h2 class="titleAddVote">LA BONNE ACTION D'HIER</h2>
             <div class="actions" *ngFor="let action of actions">
                 <p>{{user.pseudo}}</p>
                 <img [src]="action.picture" class="imagesVote"/>

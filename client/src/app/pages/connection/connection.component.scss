@@ -1,39 +1,32 @@
-.baseformulaire{
+.connectionContainer {
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: auto;
+    width: 100%;
+    height: 100%;
     margin-top: 15%;
+    background-image:url(/assets/santamastercalendar-52.png);
+    background-size: cover;
 }
 
-.formTitle {
+.connectionTitle {
     color: #E71D36;
     text-align: center;
 }
-.engagement{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
 
-.buttonconceptpage{
+.buttonConnection {
     display: flex;
     justify-content: center;
 }
-  
-.mat-checkbox-layout{
-    margin-bottom: 16px;
-}
-.mat-raised-button{
-    background-color:#E71D36;;
-} 
-.mat-form-field-wrapper{
-    padding-bottom: 5px;
-}
 
-mat-label, p, mat-checkbox, li{
+.mat-raised-button{
+    background-color:#E71D36;
+} 
+
+mat-label, p {
     color:white
 }
+
 /* Border */
 .mat-form-field-appearance-outline .mat-form-field-outline {
     color: white;
@@ -42,5 +35,3 @@ mat-label, p, mat-checkbox, li{
 input.mat-input-element {
     color: white;
 }
-
-
