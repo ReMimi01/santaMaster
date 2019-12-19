@@ -1,0 +1,19 @@
+.container{
+    margin-top: 25%;
+    height: 650px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: #E71D36;
+}
+.days {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.day {
+    width: 150px;
+    margin: 80px;
+}

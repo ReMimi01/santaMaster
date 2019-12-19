@@ -21,6 +21,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { RankingPageComponent } from './pages/ranking-page/ranking-page.component';
 import { ParticipationComponent } from './pages/participation/participation.component';
 import { RouterModule } from '@angular/router';
+import { Calendar2Component } from './pages/calendar2/calendar2.component';
+import { WinnerPageComponent } from './pages/winner-page/winner-page.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { RouterModule } from '@angular/router';
     ConnectionComponent,
     AddVotesComponent,
     ParticipationComponent,
-    RankingPageComponent
+    RankingPageComponent,
+    Calendar2Component,
+    WinnerPageComponent
   ],
   imports: [
     BrowserModule,
