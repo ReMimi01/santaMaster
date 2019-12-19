@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { FormulaireComponent } from './pages/formulaire/formulaire.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material'
+import { MatInputModule, MatCardModule } from '@angular/material'
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,14 +15,17 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import { CalendarComponent } from './pages/calendar/calendar.component';
+import { ParticipationComponent } from './pages/participation/participation.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    CalendarComponent
+    CalendarComponent,
     LandingPagesComponent,
     FormulaireComponent,
+    ParticipationComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,11 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
     HttpClientModule,
     MatMenuModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
+    MatButtonModule, 
+    MatInputModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
