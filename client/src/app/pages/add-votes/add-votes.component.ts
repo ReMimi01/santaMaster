@@ -13,21 +13,25 @@ export class AddVotesComponent implements OnInit {
 
   SERVER_URL = "http://localhost:3000/actions";
   uploadForm: FormGroup; 
+
   constructor(private formBuilder: FormBuilder, private httpClient: HttpClient) { }
   ngOnInit() {
     this.uploadForm = this.formBuilder.group({
-      action: ['']
+      picture: [''],
+      detail: ['']
     });
   }
   onFileSelect(event) {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
-      this.uploadForm.get('action').setValue(file);
+      this.uploadForm.get('picture').setValue(file);
     }
   }
   onSubmit() {
     const formData = new FormData();
-    formData.append('action', this.uploadForm.get('action').value);
+    formData.append('picture', this.uploadForm.get('picture').value);
+    formData.append('detail', this.uploadForm.get('detail').value);
+
     this.httpClient.post<any>(this.SERVER_URL, formData).subscribe(
       (res) => console.log(res),
       (err) => console.log(err)
