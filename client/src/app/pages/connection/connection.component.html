@@ -1,0 +1,22 @@
+<div class="connectionContainer">
+    <h2 class="connectionTitle">Connexion</h2>
+    <div class='connectionFormulaire'>
+        <form [formGroup]="userConnect" (ngSubmit)="userConnect()">
+
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Mot de passe</mat-label>
+                <input matInput type='password' formControlName="password" required>
+            </mat-form-field>
+        
+            <div class='buttonConnection'>
+                    <div class="example-button-row">
+                        <button type="submit" mat-raised-button [disabled]="!userConnect.valid" >Connexion</button>
+                    </div>
+            </div>
+        </form>
+    </div>

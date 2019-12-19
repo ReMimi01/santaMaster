@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { FormulaireService } from 'src/app/shared/formulaire.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulaire',
@@ -24,14 +25,17 @@ export class FormulaireComponent implements OnInit {
   });
 
 
-  constructor(private formbuilder : FormBuilder, private formulaireService : FormulaireService) { }
+  constructor(private formbuilder : FormBuilder, private formulaireService : FormulaireService, public router: Router) { }
 
   ngOnInit() {
   }
-
+  
+  test(){
+    this.router.navigate(['/participation'])
+  }
   addUser(){
-    console.log
-    let newUser = {
+    
+    let newUser = {
     pseudo : this.userForm.value.pseudo,
     firstname : this.userForm.value.firstname,
     lastname : this.userForm.value.lastname,
@@ -43,6 +47,9 @@ export class FormulaireComponent implements OnInit {
           console.log(result)
         }
       );
+      setTimeout(this.test.bind(this),1000);
   }
+
+
 
 }

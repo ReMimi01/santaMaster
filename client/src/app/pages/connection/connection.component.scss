@@ -1,34 +1,28 @@
-.baseformulaire{
+.connectionContainer {
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: auto;
     margin-top: 15%;
 }
-.engagement{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+
+.connectionTitle {
+    color: #E71D36;
+    text-align: center;
 }
 
-.buttonconceptpage{
+.buttonConnection {
     display: flex;
     justify-content: center;
 }
-  
-.mat-checkbox-layout{
-    margin-bottom: 16px;
-}
-.mat-raised-button{
-    background-color:#E71D36;;
-} 
-.mat-form-field-wrapper{
-    padding-bottom: 5px;
-}
 
-mat-label, p, mat-checkbox, li{
+.mat-raised-button{
+    background-color:#E71D36;
+} 
+
+mat-label, p {
     color:white
 }
+
 /* Border */
 .mat-form-field-appearance-outline .mat-form-field-outline {
     color: white;
@@ -37,5 +31,3 @@ mat-label, p, mat-checkbox, li{
 input.mat-input-element {
     color: white;
 }
-
-
