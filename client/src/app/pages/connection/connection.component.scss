@@ -1,0 +1,33 @@
+.connectionContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 15%;
+}
+
+.connectionTitle {
+    color: #E71D36;
+    text-align: center;
+}
+
+.buttonConnection {
+    display: flex;
+    justify-content: center;
+}
+
+.mat-raised-button{
+    background-color:#E71D36;
+} 
+
+mat-label, p {
+    color:white
+}
+
+/* Border */
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white;
+}
+  /* Font color */
+input.mat-input-element {
+    color: white;
+}
