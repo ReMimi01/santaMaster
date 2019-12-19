@@ -1,0 +1,31 @@
+<div class="containerAddVote">
+    <mat-tab-group>
+        <mat-tab label="Partager">
+            <form [formGroup] = "uploadForm" (ngSubmit)="onSubmit()">
+                <h2 class="titleAddVote">Poste ta bonne action du jour</h2>
+                    <div class="formAdd">  
+                        <p>Description :</p>
+                        <textarea rows="5" cols="15" type="text" id="detail" class="formDescription"></textarea>
+                        <p>Photo :</p>
+                        <input type="file" name="action" (change)="onFileSelect($event)" class="formImage" />
+                        <div >
+                            <button type="submit" mat-raised-button class="buttonAddVote">Partager</button>
+                        </div>
+                    </div>
+            </form> 
+        </mat-tab>
+
+        <mat-tab label="Voter"> 
+            <h2 class="titleAddVote">Vote pour la bonne action du jour</h2>
+            <div class="actions" *ngFor="let action of actions">
+                <p>{{user.pseudo}}</p>
+                <img [src]="action.picture" class="imagesVote"/>
+                <p>{{ action.detail }}</p>
+                <button mat-raised-button class="buttonAddVote like">
+                    <mat-icon>favorite_border</mat-icon>
+                    <mat-icon *ngIf="isVoted">favorite</mat-icon>
+                </button>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>
