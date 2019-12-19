@@ -1,0 +1,63 @@
+.containerAddVote {
+    background-color: #011628;
+    width: 100%;
+    height: 100%;
+    margin-top: 15%;
+    color: white;
+}
+
+.titleAddVote {
+    color: #E71D36;
+    text-align: center;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin: 7%;
+}
+
+.formDescription {
+    border: none;
+    width: 100%;
+}
+
+.formImage {
+    border: none;
+    width: 100%;
+}
+
+.buttonAddVote {
+    background-color:#E71D36;
+    color: white;
+    margin-top: 7%;
+    float: right;
+}
+
+::ng-deep .mat-tab-list .mat-tab-labels  {
+    color:white;;
+    }
+
+::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
+    color:#011628;
+    background-color: #2EC5B6;
+    }
+    
+::ng-deep .mat-ink-bar {
+    background-color: var(--primary-color,#2EC5B6) !important;
+    }
+
+.imagesVote {
+    width: 100%;
+}
+
+.actions {
+    background-color: white;
+    color: #011628;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+    padding: 10px;
+}

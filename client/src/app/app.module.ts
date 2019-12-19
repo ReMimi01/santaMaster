@@ -15,14 +15,17 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import { CalendarComponent } from './pages/calendar/calendar.component';
+import { AddVotesComponent } from './pages/add-votes/add-votes.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    CalendarComponent
+    CalendarComponent,
     LandingPagesComponent,
     FormulaireComponent,
+    AddVotesComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
     HttpClientModule,
     MatMenuModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
