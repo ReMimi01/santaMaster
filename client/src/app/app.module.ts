@@ -17,6 +17,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { CalendarComponent } from './pages/calendar/calendar.component';
 import { AddVotesComponent } from './pages/add-votes/add-votes.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { RankingPageComponent } from './pages/ranking-page/ranking-page.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     LandingPagesComponent,
     FormulaireComponent,
     AddVotesComponent,
+    RankingPageComponent,
   ],
   imports: [
     BrowserModule,
