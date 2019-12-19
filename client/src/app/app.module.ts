@@ -15,6 +15,9 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import { CalendarComponent } from './pages/calendar/calendar.component';
+import { AddVotesComponent } from './pages/add-votes/add-votes.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { RankingPageComponent } from './pages/ranking-page/ranking-page.component';
 import { ParticipationComponent } from './pages/participation/participation.component';
 import { RouterModule } from '@angular/router';
 
@@ -25,6 +28,7 @@ import { RouterModule } from '@angular/router';
     CalendarComponent,
     LandingPagesComponent,
     FormulaireComponent,
+    AddVotesComponent,
     ParticipationComponent,
   ],
   imports: [
@@ -41,10 +45,10 @@ import { RouterModule } from '@angular/router';
     MatMenuModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatTabsModule,
     MatCardModule,
     MatButtonModule, 
-    MatInputModule,
-    
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
