@@ -49,15 +49,17 @@ export class ActionsRepository {
      * Make a query to the database to insert a new action and return the created action in a promise.
      * @param action action to create
      */
-    insert(action: Action) {
+    insert(action: Action, user_id: number, calendar_id: number) {
       return this.connection.query(
-        `INSERT INTO ${this.table} (title, picture, detail) VALUES (?,?,?)`,
-        [action.title, action.picture, action.detail]
+        `INSERT INTO ${this.table} (picture, detail, date, user_id, calendar_id) VALUES (?,?,?,?,?)`,
+        [action.picture, action.detail, action.date, user_id, calendar_id]
       ).then((result: any) => {
         // After an insert the insert id is directly passed in the promise
         return this.findById(result.insertId);
       });
     }
+    
+
 
     /**
      * Make a query to the database to update an existing action and return the updated action in a promise.
@@ -66,7 +68,7 @@ export class ActionsRepository {
     update(action: Action) {
       return this.connection.query(
         `UPDATE ${this.table} SET title = ?, picture = ?, detail = ? WHERE id = ?`,
-        [action.detail, action.title, action.picture]
+        [action.detail, action.picture]
       ).then(() => {
         return this.findById(action.id);
       });
