@@ -16,6 +16,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import { CalendarComponent } from './pages/calendar/calendar.component';
 import { ConnectionComponent } from './pages/connection/connection.component';
+import { AddVotesComponent } from './pages/add-votes/add-votes.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { RankingPageComponent } from './pages/ranking-page/ranking-page.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,8 @@ import { ConnectionComponent } from './pages/connection/connection.component';
     LandingPagesComponent,
     FormulaireComponent,
     ConnectionComponent,
+    AddVotesComponent,
+    RankingPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,8 @@ import { ConnectionComponent } from './pages/connection/connection.component';
     HttpClientModule,
     MatMenuModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
