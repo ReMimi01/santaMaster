@@ -4,7 +4,15 @@
     justify-content: space-around;
 }
 
-.buttonselected{
+.imgavatar{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    height: 150px;
+}
+.buttonselected, p{
     color: red;
 }
 

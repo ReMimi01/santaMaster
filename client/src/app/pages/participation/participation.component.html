@@ -9,10 +9,16 @@
                     <button mat-raised-button type="submit">Upload</button>
                 </div>
             </form>
+            <div class="imgavatar">
+                <img [src]="user.avatar">
+            </div>
     </div>
     <h3>Mes Participations</h3>
     <div class='participationencours'>
+        <div *ngFor='let calendar of calendars'>
+            <a routerLink='/calendar'>{{ calendar.name }}</a>
 
+        </div>
 
     
     </div>
