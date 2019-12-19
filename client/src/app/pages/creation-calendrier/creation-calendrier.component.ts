@@ -13,7 +13,7 @@ export class CreationCalendrierComponent implements OnInit {
 
 
   userForm = this.formbuilder.group({
-    calendrier: ['', [Validators.required] ],
+    calendrier: ['', [Validators.required, Validators.maxLength(20)] ],
   });
 
   constructor(private formbuilder : FormBuilder, private formulaireService : FormulaireService, private router : Router) { }

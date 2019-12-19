@@ -27,3 +27,18 @@ input.mat-input-element {
     color: #E71D36;
     align-items: center;
 }
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.example-button-row{
+    margin-bottom: 20%;
+}
+
+button{
+    width: 100px;
+}

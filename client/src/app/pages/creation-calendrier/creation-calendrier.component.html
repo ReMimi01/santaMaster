@@ -1,13 +1,17 @@
 <div class='creationpage'>
     <h2>NOM DE VOTRE CALENDRIER</h2>   
     <form [formGroup]="userForm" (ngSubmit)="addCalendrier()">
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="outline" hintLabel="Max 20 characters">
                 <mat-label>Nom de Calendrier</mat-label>
                 <input matInput formControlName="calendrier" required>
+                <mat-hint align="end"></mat-hint>
             </mat-form-field>
             <div class='buttonconceptpage'>
                     <div class="example-button-row">
                         <button type="submit" mat-raised-button [disabled]="!userForm.valid" >Continuer</button>
+                    </div>
+                    <div class="example-button-row">
+                        <button mat-raised-button  routerLink='/participation' >Retour</button>
                     </div>
             </div>
     </form>
