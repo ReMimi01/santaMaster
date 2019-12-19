@@ -11,6 +11,7 @@
 client/node_modules
 server/node_modules
 server/src/loaders/mysql.ts
+.env
 
 # profiling files
 chrome-profiler-events*.json

@@ -20,7 +20,7 @@ export class ParticipationComponent implements OnInit {
   selectedFile: File;
   user : User;
   calendars : Calendar;
-
+  
   ngOnInit() {
     this.uploadForm = this.fromBuilder.group({
       avatar: ['']
@@ -38,6 +38,7 @@ export class ParticipationComponent implements OnInit {
       }
     )
     }
+
 
 
 

@@ -42,16 +42,39 @@ export const ActionsController = (app: Application) => {
     /**
      * Create a new action from a JSON body and return the created action in JSON.
      */
-    router.post('/', (req: Request, res: Response) => {
-      const action: Action = req.body; // Automatically transform in a Action object
+    router.use(express.static('uploads'));
+     
+    router.post('/', async (req : Request, res : Response) => {
+      try {
+          if(!req.files) {
+              res.send({
+                  status: false,
+                  message: 'No file uploaded'
+              });
+          } else {
+              //Use the name of the input field (i.e. "avatar") to retrieve the uploaded file
+              let action : any = req.files.action;
+              
+              //Use the mv() method to place the file in upload directory (i.e. "uploads")
+              action.mv('./uploads/' + action.name);
+  
+              //send response
+              res.send({
+                  status: true,
+                  message: 'File is uploaded',
+                  data: {
+                      name: action.name,
+                      mimetype: action.mimetype,
+                      size: action.size
+                  }
+              });
+          }
+      } catch (err) {
+          res.status(500).send(err);
+      }
+  });
 
-      actionsService.create(action).then(result => {
-            res.send(result);
-        })
-        .catch(err => {
-          console.log(err);
-        })
-    });
+
 
     /**
      * Update a action relative to its id and return the updated action in JSON.

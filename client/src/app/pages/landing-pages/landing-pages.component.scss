@@ -1,9 +1,11 @@
 .conceptpage{
   width: 80%;
   margin: auto;
+  margin-top: 18%;
 }
 
 .div{
+  margin-top: 35%;
   color : white;
   text-align: justify;
 }
@@ -15,13 +17,19 @@ h3{
 span, h3{
   color : #E71D36;
 }
-.example-button-row button{
-  margin-right: 8px;
+.example-button-row{
+  display: flex;
+  justify-content: space-evenly;
+}
+.buttonEntry{
+  width: 100px;
 }
 
 .buttonconceptpage{
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
 }
 
 .mat-raised-button{

@@ -1,5 +1,7 @@
 import { UsersRepository } from './../repository/users.repository';
 import { User } from 'src/models/user';
+import * as jwt from 'jsonwebtoken';
+import * as argon2 from 'argon2';
 /**
  * Cette classe est un service
  * C'est ici que l'ensemble de la logique consernant les user doit apparaitre.
@@ -43,8 +45,36 @@ export class UsersService {
      * Create a new user and return a promise which contains the created user.
      * @param user user to create
      */
-    create(user: any): Promise<User> {
+    async create(user: any): Promise<User> {
+      user.password = await argon2.hash(user.password);
+      console.log(user);
       return this.repository.insert(user);
+    }
+
+    /**
+     * Login in as an user
+     * @param user 
+     */
+    async login(email: string, password: string) {
+      const user = await this.repository.findByEmail(email);
+      if (!user) {
+        throw new Error('Les informations ne sont pas valide');
+      }
+      const isValid = await argon2.verify(user.password, password);
+      if (!isValid) {
+        throw new Error('Les informations ne sont pas valide');
+      }
+      const userToken = {email: user.email, id: user.id, firstname: user.firstname};
+
+      const secret = process.env.WILD_JWT_SECRET;
+      if (!secret) {
+        throw new Error('Pas de secret setup');
+      }
+
+      const token2 = jwt.sign(userToken,  secret);
+      console.log(token2);
+
+      return token2;
     }
 
     /**

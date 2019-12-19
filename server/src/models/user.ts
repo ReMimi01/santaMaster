@@ -6,7 +6,7 @@ export class User   {
     email!: string;
     password!: string;
     score!: number;
-    avatar! : string;
+    avatar!: string;
 
     constructor(input: User) {
         Object.assign(this, input);
