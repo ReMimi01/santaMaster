@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'connexion', component: ConnectionComponent},
   { path: 'ba', component: AddVotesComponent },
   { path: 'classement', component: RankingPageComponent },
-  { path: 'connexion', component:}
+  { path: 'connexion', component:ConnectionComponent},
   { path: 'participation', component: ParticipationComponent },
 ];
 

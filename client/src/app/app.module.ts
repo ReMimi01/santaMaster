@@ -32,6 +32,7 @@ import { RouterModule } from '@angular/router';
     ConnectionComponent,
     AddVotesComponent,
     ParticipationComponent,
+    RankingPageComponent
   ],
   imports: [
     BrowserModule,
