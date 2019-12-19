@@ -15,14 +15,16 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import { CalendarComponent } from './pages/calendar/calendar.component';
+import { ConnectionComponent } from './pages/connection/connection.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    CalendarComponent
+    CalendarComponent,
     LandingPagesComponent,
     FormulaireComponent,
+    ConnectionComponent,
   ],
   imports: [
     BrowserModule,
