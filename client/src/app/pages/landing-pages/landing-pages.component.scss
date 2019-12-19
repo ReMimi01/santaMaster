@@ -19,11 +19,10 @@ span, h3{
 }
 .example-button-row{
   display: flex;
-  justify-content: space-around;
-
-  button{
-  margin-right: 8px;
-  }
+  justify-content: space-evenly;
+}
+.buttonEntry{
+  width: 100px;
 }
 
 .buttonconceptpage{

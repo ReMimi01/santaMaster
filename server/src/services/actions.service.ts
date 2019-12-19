@@ -43,8 +43,8 @@ export class ActionsService {
      * Create a new action and return a promise which contains the created action.
      * @param action action to create
      */
-    create(action: any): Promise<Action> {
-      return this.repository.insert(action);
+    create(action: Action, user_id: number, calendar_id: number): Promise<Action> {
+      return this.repository.insert(action, user_id, calendar_id);
     }
 
     /**

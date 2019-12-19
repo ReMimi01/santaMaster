@@ -42,7 +42,7 @@ export const ActionsController = (app: Application) => {
     /**
      * Create a new action from a JSON body and return the created action in JSON.
      */
-    router.use(express.static('uploads'));
+
      
     router.post('/', async (req : Request, res : Response) => {
       try {
@@ -52,22 +52,19 @@ export const ActionsController = (app: Application) => {
                   message: 'No file uploaded'
               });
           } else {
+              const action: Action = req.body;
               //Use the name of the input field (i.e. "avatar") to retrieve the uploaded file
-              let action : any = req.files.action;
+              let pictureFile: any = req.files.picture;
               
               //Use the mv() method to place the file in upload directory (i.e. "uploads")
-              action.mv('./uploads/' + action.name);
-  
-              //send response
-              res.send({
-                  status: true,
-                  message: 'File is uploaded',
-                  data: {
-                      name: action.name,
-                      mimetype: action.mimetype,
-                      size: action.size
-                  }
-              });
+              pictureFile.mv('./uploads/' + pictureFile.name);
+
+              action.picture = pictureFile.name;
+
+              actionsService.create(action, user_id, calendar_id)
+                .then(action => {
+                  res.send(action)
+                });
           }
       } catch (err) {
           res.status(500).send(err);
