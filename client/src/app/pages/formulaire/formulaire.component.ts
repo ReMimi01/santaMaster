@@ -25,19 +25,16 @@ export class FormulaireComponent implements OnInit {
   });
 
 
-  constructor(private formbuilder : FormBuilder, private formulaireService : FormulaireService, private router: Router) { }
+  constructor(private formbuilder : FormBuilder, private formulaireService : FormulaireService, public router: Router) { }
 
   ngOnInit() {
   }
-
-  changepage(){
-    console.log('bonjour');
-    this.router.navigate(['']);
-    
-  }
   
+  test(){
+    this.router.navigate(['/participation'])
+  }
   addUser(){
-    setTimeout(this.changepage, 1000);
+    
     let newUser = {
     pseudo : this.userForm.value.pseudo,
     firstname : this.userForm.value.firstname,
@@ -50,7 +47,9 @@ export class FormulaireComponent implements OnInit {
           console.log(result)
         }
       );
-    
+      setTimeout(this.test.bind(this),1000);
   }
+
+
 
 }
