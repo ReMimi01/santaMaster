@@ -1,7 +1,22 @@
-<div>
-    <h3>Mes Participations</h3>
-
+<div class='participationpage'>
     <div>
+        <h4>Avatar</h4>
+            <form [formGroup] = "uploadForm"  (ngSubmit)="onSubmit()" class='uploadavatar'>
+                <div class='buttonselected'>
+                    <input type="file" name="avatar" (change)="onFileSelect($event)" />
+                </div>
+                <div class="example-button-row">
+                    <button mat-raised-button type="submit">Upload</button>
+                </div>
+            </form>
+    </div>
+    <h3>Mes Participations</h3>
+    <div class='participationencours'>
+
+
+    
+    </div>
+    <div class='buttonparticipationpage'>
         <div class="example-button-row">
             <button mat-raised-button>Créer un Calendrier</button>
         </div>

@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { FormulaireComponent } from './pages/formulaire/formulaire.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material'
+import { MatInputModule, MatCardModule } from '@angular/material'
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -41,6 +41,9 @@ import { RouterModule } from '@angular/router';
     MatMenuModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatCardModule,
+    MatButtonModule, 
+    MatInputModule,
     
   ],
   providers: [],
