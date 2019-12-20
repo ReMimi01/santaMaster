@@ -12,8 +12,8 @@ export class RankingPageComponent implements OnInit {
     new RankingContent('Chat','Rémi', 50),
     new RankingContent('Fouine','Sophie', 35),
     new RankingContent('Chat','Hakim', 2),
-    new RankingContent('Fouine','André', 60),
-    new RankingContent('Chat','Farah', 100),
+    new RankingContent('Fouine','André', 100),
+    new RankingContent('Chat','Farah', 60),
     new RankingContent('Fouine','Thomas', 78),
  ]
 
