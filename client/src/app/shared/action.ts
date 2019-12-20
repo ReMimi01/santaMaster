@@ -3,4 +3,6 @@ export class Action {
     picture: string;
     detail: string;
     date: Date;
+    user_id: number;
+    calendar_id: number;
 }
