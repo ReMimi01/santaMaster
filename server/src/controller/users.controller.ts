@@ -70,7 +70,9 @@ export const UsersController = (app: Application) => {
               
               //Use the mv() method to place the file in upload directory (i.e. "uploads")
               avatar.mv('./uploads/' + avatar.name);
-              usersService.updateAvatar(avatar, 1)
+              let nameavatar = avatar.name
+              console.log(avatar.name)
+              usersService.updateAvatar(nameavatar, 1)
                 .then(user => {
                   res.send(user);
                   //send response

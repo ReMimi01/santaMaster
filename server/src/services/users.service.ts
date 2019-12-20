@@ -76,8 +76,8 @@ export class UsersService {
       return this.repository.update(user);
     }
 
-    updateAvatar(avatar: string, userId: number ): Promise<any> {
-      return this.repository.updateAvatar(avatar, userId);
+    updateAvatar(nameavatar: string, userId: number ): Promise<any> {
+      return this.repository.updateAvatar(nameavatar, userId);
     }
 
     /**

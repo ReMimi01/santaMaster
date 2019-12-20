@@ -82,10 +82,10 @@ export class UsersRepository {
       });
     }
 
-    updateAvatar(avatar: string, userId: number){
+    updateAvatar(nameavatar: string, userId: number){
       return this.connection.query(
         `UPDATE ${this.table} SET avatar = ? WHERE id = ?`,
-        [avatar, userId]
+        [`http://localhost:3000/uploads/${nameavatar}`, userId]
       ).then(() => {
         return this.findById(userId);
       });
