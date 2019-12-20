@@ -1,17 +1,24 @@
 .conceptpage{
-  width: 80%;
-  margin: auto;
+  width: 100%;
   margin-top: 18%;
+  background-image:url(/assets/santamastercalendar-52.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  margin-top: 10%;
 }
 
 .div{
-  margin-top: 35%;
+  margin-top: 20%;
   color : white;
   text-align: justify;
+  margin: 60px;
 }
 
-h3{
+.titleHome{
   text-align: center;
+  color : #E71D36;
 }
 
 span, h3{

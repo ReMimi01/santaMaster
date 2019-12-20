@@ -43,7 +43,7 @@ export const ActionsController = (app: Application) => {
      * Create a new action from a JSON body and return the created action in JSON.
      */
 
-     
+    
     router.post('/', async (req : Request, res : Response) => {
       try {
           if(!req.files) {
@@ -61,10 +61,10 @@ export const ActionsController = (app: Application) => {
 
               action.picture = pictureFile.name;
 
-              actionsService.create(action, user_id, calendar_id)
+              /* actionsService.create(action, user_id, calendar_id)
                 .then(action => {
                   res.send(action)
-                });
+                }); */
           }
       } catch (err) {
           res.status(500).send(err);

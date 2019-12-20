@@ -1,0 +1,44 @@
+.mat-checkbox-layout{
+    margin-bottom: 16px;
+}
+.mat-raised-button{
+    background-color:#E71D36;;
+} 
+.mat-form-field-wrapper{
+    padding-bottom: 5px;
+}
+
+mat-label, p, mat-checkbox, li{
+    color:white
+}
+/* Border */
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white;
+}
+  /* Font color */
+input.mat-input-element {
+    color: white;
+}
+
+.creationpage{
+    margin-top: 22%;
+    display: flex;
+    flex-direction: column;
+    color: #E71D36;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.example-button-row{
+    margin-bottom: 20%;
+}
+
+button{
+    width: 100px;
+}

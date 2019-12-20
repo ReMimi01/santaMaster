@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { HttpClient } from '@angular/common/http'
+import { Action } from 'src/app/shared/action';
+import { FormulaireService } from 'src/app/shared/formulaire.service';
 
 @Component({
   selector: 'app-add-votes',
@@ -10,16 +12,28 @@ import { HttpClient } from '@angular/common/http'
 export class AddVotesComponent implements OnInit {
 
   isVoted = false;
+  actions: Action[] = [];
 
   SERVER_URL = "http://localhost:3000/actions";
   uploadForm: FormGroup; 
 
-  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient) { }
+  constructor(
+    private formBuilder: FormBuilder, 
+    private httpClient: HttpClient, 
+    private formulaireService: FormulaireService
+    ) { }
+
   ngOnInit() {
     this.uploadForm = this.formBuilder.group({
-      picture: [''],
-      detail: ['']
+      picture: ['', [Validators.required]],
+      detail: ['', [Validators.required ]]
     });
+    this.formulaireService.getAction().subscribe(
+      result => {
+        this.actions = result;
+        console.log(this.actions);
+      }
+    )
   }
   onFileSelect(event) {
     if (event.target.files.length > 0) {
@@ -36,6 +50,14 @@ export class AddVotesComponent implements OnInit {
       (res) => console.log(res),
       (err) => console.log(err)
     );
+  }
+
+  like() {
+    if (this.isVoted) {
+      this.isVoted = false;
+    } else {
+      this.isVoted = true;
+    }
   }
 
 }

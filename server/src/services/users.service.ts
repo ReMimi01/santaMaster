@@ -64,17 +64,8 @@ export class UsersService {
       if (!isValid) {
         throw new Error('Les informations ne sont pas valide');
       }
-      const userToken = {email: user.email, id: user.id, firstname: user.firstname};
-
-      const secret = process.env.WILD_JWT_SECRET;
-      if (!secret) {
-        throw new Error('Pas de secret setup');
-      }
-
-      const token2 = jwt.sign(userToken,  secret);
-      console.log(token2);
-
-      return token2;
+      console.log(user);
+      return user;
     }
 
     /**
@@ -83,6 +74,10 @@ export class UsersService {
      */
     update(user: any): Promise<User> {
       return this.repository.update(user);
+    }
+
+    updateAvatar(nameavatar: string, userId: number ): Promise<any> {
+      return this.repository.updateAvatar(nameavatar, userId);
     }
 
     /**

@@ -9,6 +9,7 @@ import { RankingPageComponent } from './pages/ranking-page/ranking-page.componen
 import { ParticipationComponent } from './pages/participation/participation.component';
 import { Calendar2Component } from './pages/calendar2/calendar2.component';
 import { WinnerPageComponent } from './pages/winner-page/winner-page.component';
+import { CreationCalendrierComponent } from './pages/creation-calendrier/creation-calendrier.component';
 
 
 const routes: Routes = [
@@ -18,9 +19,11 @@ const routes: Routes = [
   { path: 'connexion', component: ConnectionComponent},
   { path: 'ba', component: AddVotesComponent },
   { path: 'classement', component: RankingPageComponent },
+  { path: 'connexion', component:ConnectionComponent},
   { path: 'participation', component: ParticipationComponent },
   { path: 'calendrier2', component: Calendar2Component },
   { path: 'gagnant', component: WinnerPageComponent },
+  { path: 'creationCalendrier', component: CreationCalendrierComponent },
 ];
 
 @NgModule({

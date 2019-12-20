@@ -23,6 +23,8 @@ import { ParticipationComponent } from './pages/participation/participation.comp
 import { RouterModule } from '@angular/router';
 import { Calendar2Component } from './pages/calendar2/calendar2.component';
 import { WinnerPageComponent } from './pages/winner-page/winner-page.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { CreationCalendrierComponent } from './pages/creation-calendrier/creation-calendrier.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { WinnerPageComponent } from './pages/winner-page/winner-page.component';
     ParticipationComponent,
     RankingPageComponent,
     Calendar2Component,
-    WinnerPageComponent
+    WinnerPageComponent,
+    CreationCalendrierComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { WinnerPageComponent } from './pages/winner-page/winner-page.component';
     MatTabsModule,
     MatCardModule,
     MatButtonModule, 
-    MatInputModule
+    MatInputModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
