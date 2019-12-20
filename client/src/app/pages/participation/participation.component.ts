@@ -5,6 +5,8 @@ import { FormulaireService } from 'src/app/shared/formulaire.service';
 import { User } from 'src/app/shared/user';
 import { Calendar } from 'src/app/shared/calendar'
 import { MatDialog } from '@angular/material';
+import { ResourceLoader } from '@angular/compiler';
+import { RouterLink, Router } from '@angular/router';
 
 @Component({
   selector: 'app-participation',
@@ -16,7 +18,7 @@ export class ParticipationComponent implements OnInit {
   uploadForm: FormGroup;
   SERVEUR_URL = "http://localhost:3000/users/upload-avatar"
 
-  constructor(public dialog: MatDialog, private httpClient : HttpClient, private fromBuilder : FormBuilder, private formulaireService : FormulaireService) { }
+  constructor(public dialog: MatDialog, private httpClient : HttpClient, private fromBuilder : FormBuilder, private formulaireService : FormulaireService, private router : Router) { }
 
   selectedFile: File;
   user : User;
@@ -63,6 +65,10 @@ export class ParticipationComponent implements OnInit {
       (err) => console.log(err)
     );
     console.log()
+  }
+
+  refresh(){
+    document.location.reload(true);
   }
 
 

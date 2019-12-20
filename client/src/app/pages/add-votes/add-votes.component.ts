@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { HttpClient } from '@angular/common/http'
 
 @Component({
@@ -17,8 +17,8 @@ export class AddVotesComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private httpClient: HttpClient) { }
   ngOnInit() {
     this.uploadForm = this.formBuilder.group({
-      picture: [''],
-      detail: ['']
+      picture: ['', [Validators.required]],
+      detail: ['', [Validators.required ]]
     });
   }
   onFileSelect(event) {

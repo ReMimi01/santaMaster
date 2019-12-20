@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Day } from 'src/app/shared/day';
 import { DAYS } from 'src/app/shared/day-mock';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-calendar',
@@ -9,13 +10,13 @@ import { DAYS } from 'src/app/shared/day-mock';
 })
 export class CalendarComponent implements OnInit {
   days:  Day[] = DAYS;
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit() {
   }
-/* 
-  onDayClicked(day: Day) {
-    this.dayEvent.emit(day);
-  } */
+
+   onDayClicked() {
+    this.router.navigate(['/ba'])
+  } 
 
 }

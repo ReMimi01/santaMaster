@@ -2,21 +2,24 @@
     <mat-tab-group>
         <mat-tab label="Partager">
             <form [formGroup] = "uploadForm" (ngSubmit)="onSubmit()">
-                <h2 class="titleAddVote">Poste ta bonne action du jour</h2>
+                <h2 class="titleAddVote">TA BONNE ACTION DU JOUR</h2>
                     <div class="formAdd">  
                         <p>Description :</p>
                         <textarea formControlName="detail" rows="5" cols="15" type="text" id="detail" class="formDescription" ></textarea>
                         <p>Photo :</p>
                         <input type="file" name="action" (change)="onFileSelect($event)" class="formImage" />
                         <div >
-                            <button type="submit" mat-raised-button class="buttonAddVote">Partager</button>
+                            <button type="submit" [disabled]="!uploadForm.valid" mat-raised-button class="buttonAddVote">Partager</button>
+                        </div>
+                        <div >
+                            <button routerLink="/calendrier"  mat-raised-button class="buttonAddVote">Retour</button>
                         </div>
                     </div>
             </form> 
         </mat-tab>
 
         <mat-tab label="Voter"> 
-            <h2 class="titleAddVote">Vote pour la bonne action du jour</h2>
+            <h2 class="titleAddVote">LA BONNE ACTION D'HIER</h2>
             <div class="actions" *ngFor="let action of actions">
                 <p>{{user.pseudo}}</p>
                 <img [src]="action.picture" class="imagesVote"/>

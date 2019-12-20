@@ -14,6 +14,7 @@ export const AuthController = (app: Application) => {
         const user: User = req.body; // Automatically transform in a User object
         usersService.login(user.email, user.password)
         .then(result => user ? res.json(result) : res.status(400).send('Username or password is incorrect'))
+        // .then(result => isValid ?)
         .catch(err => console.log(err));
         
     })

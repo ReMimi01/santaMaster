@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { User } from './user';
 import { Calendar } from './calendar';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ export class FormulaireService {
 
   userUrl = 'http://localhost:3000'
   user : User[] = []
+  connectedUserValue = null;
 
   constructor(private http : HttpClient, private router: Router) { }
 
@@ -37,4 +39,13 @@ export class FormulaireService {
   getCalendarUser(){
     return this.http.get<Calendar>(`${this.userUrl}/calendars`)
   }
+  login(userLogins): Observable<any> {
+    return this.http.post(`${this.userUrl}/auth/login`, userLogins);
+  }
+
+  isConnected(result) {
+    this.connectedUserValue = result;
+  }
+
+
 }
