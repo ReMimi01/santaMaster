@@ -21,6 +21,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { RankingPageComponent } from './pages/ranking-page/ranking-page.component';
 import { ParticipationComponent } from './pages/participation/participation.component';
 import { RouterModule } from '@angular/router';
+import {MatDialogModule} from '@angular/material/dialog';
+import { CreationCalendrierComponent } from './pages/creation-calendrier/creation-calendrier.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { RouterModule } from '@angular/router';
     ConnectionComponent,
     AddVotesComponent,
     ParticipationComponent,
-    RankingPageComponent
+    RankingPageComponent,
+    CreationCalendrierComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ import { RouterModule } from '@angular/router';
     MatTabsModule,
     MatCardModule,
     MatButtonModule, 
-    MatInputModule
+    MatInputModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

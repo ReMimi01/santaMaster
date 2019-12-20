@@ -9,7 +9,10 @@
                         <p>Photo :</p>
                         <input type="file" name="action" (change)="onFileSelect($event)" class="formImage" />
                         <div >
-                            <button type="submit" mat-raised-button class="buttonAddVote">Partager</button>
+                            <button type="submit" [disabled]="!uploadForm.valid" mat-raised-button class="buttonAddVote">Partager</button>
+                        </div>
+                        <div >
+                            <button routerLink="/calendrier"  mat-raised-button class="buttonAddVote">Retour</button>
                         </div>
                     </div>
             </form> 

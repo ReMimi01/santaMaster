@@ -75,10 +75,19 @@ export class UsersRepository {
      */
     update(user: User) {
       return this.connection.query(
-        `UPDATE ${this.table} SET pseudo = ?, lastname = ?, email = ? WHERE id = ?`,
-        [user.pseudo, user.lastname, user.email,user.id]
+        `UPDATE ${this.table} SET pseudo = ?, lastname = ?, email = ?, avatar = ? WHERE id = ?`,
+        [user.pseudo, user.lastname, user.email,user.avatar, user.id]
       ).then(() => {
         return this.findById(user.id);
+      });
+    }
+
+    updateAvatar(nameavatar: string, userId: number){
+      return this.connection.query(
+        `UPDATE ${this.table} SET avatar = ? WHERE id = ?`,
+        [`http://localhost:3000/uploads/${nameavatar}`, userId]
+      ).then(() => {
+        return this.findById(userId);
       });
     }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { HttpClient } from '@angular/common/http'
 import { Action } from 'src/app/shared/action';
 import { FormulaireService } from 'src/app/shared/formulaire.service';
@@ -25,8 +25,8 @@ export class AddVotesComponent implements OnInit {
 
   ngOnInit() {
     this.uploadForm = this.formBuilder.group({
-      picture: [''],
-      detail: ['']
+      picture: ['', [Validators.required]],
+      detail: ['', [Validators.required ]]
     });
     this.formulaireService.getAction().subscribe(
       result => {

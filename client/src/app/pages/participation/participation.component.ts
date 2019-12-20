@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormulaireService } from 'src/app/shared/formulaire.service';
+import { User } from 'src/app/shared/user';
+import { Calendar } from 'src/app/shared/calendar'
+import { MatDialog } from '@angular/material';
+import { ResourceLoader } from '@angular/compiler';
+import { RouterLink, Router } from '@angular/router';
 
 @Component({
   selector: 'app-participation',
@@ -12,15 +18,34 @@ export class ParticipationComponent implements OnInit {
   uploadForm: FormGroup;
   SERVEUR_URL = "http://localhost:3000/users/upload-avatar"
 
-  constructor(private httpClient : HttpClient, private fromBuilder : FormBuilder) { }
+  constructor(public dialog: MatDialog, private httpClient : HttpClient, private fromBuilder : FormBuilder, private formulaireService : FormulaireService, private router : Router) { }
 
   selectedFile: File;
+  user : User;
+  calendars : Calendar;
+  calendar: Calendar;
+
   
   ngOnInit() {
     this.uploadForm = this.fromBuilder.group({
       avatar: ['']
     });
-  }
+
+    this.formulaireService.getAvatarUser().subscribe(
+        response => { 
+          this.user = response;
+        }
+      );
+
+    this.formulaireService.getCalendarUser().subscribe(
+      response => {
+        this.calendars = response;
+      }
+    )
+    }
+
+
+
 
   onFileSelect(event) {
     if (event.target.files.length > 0) {
@@ -42,7 +67,12 @@ export class ParticipationComponent implements OnInit {
     console.log()
   }
 
+  refresh(){
+    document.location.reload(true);
+  }
 
+
+  
 
 
 }

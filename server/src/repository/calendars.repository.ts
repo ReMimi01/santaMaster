@@ -52,7 +52,7 @@ export class CalendarsRepository {
     insert(calendar: Calendar) {
       return this.connection.query(
         `INSERT INTO ${this.table} (detail, guid, name, type) VALUES (?,?,?,?)`,
-        [calendar.detail, calendar.guid, calendar.name, calendar.type]
+        ["Top", "009", calendar.name, "Test"]
       ).then((result: any) => {
         // After an insert the insert id is directly passed in the promise
         return this.findById(result.insertId);

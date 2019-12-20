@@ -4,14 +4,39 @@
     justify-content: space-around;
 }
 
+.cardparticipation{
+    margin: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+
+span{
+    align-items: center;
+    justify-items: center;
+    display: flex;
+    width: 150px
+}
+
+.imgavatar{
+    display: flex;
+    justify-content: center;
+}
+mat-card{
+    display: flex;
+    flex-direction: row;
+}
+
+img{
+    height: 150px;
+}
+.buttonselected, p{
+    color: red;
+}
 .profilTitle {
     color: #E71D36;
     text-align: center;
 }
 
-.buttonselected{
-    color: red;
-}
 
 .participationpage{
     margin: auto;

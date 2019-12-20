@@ -61,10 +61,10 @@ export const ActionsController = (app: Application) => {
 
               action.picture = pictureFile.name;
 
-              actionsService.create(action, user_id, calendar_id)
+              /* actionsService.create(action, user_id, calendar_id)
                 .then(action => {
                   res.send(action)
-                });
+                }); */
           }
       } catch (err) {
           res.status(500).send(err);
