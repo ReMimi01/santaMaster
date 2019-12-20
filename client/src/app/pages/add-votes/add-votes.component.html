@@ -18,11 +18,11 @@
         <mat-tab label="Voter"> 
             <h2 class="titleAddVote">LA BONNE ACTION D'HIER</h2>
             <div class="actions" *ngFor="let action of actions">
-                <p>{{user.pseudo}}</p>
+                <!-- <p>{{user.pseudo}}</p> -->
                 <img [src]="action.picture" class="imagesVote"/>
                 <p>{{ action.detail }}</p>
-                <button mat-raised-button class="buttonAddVote like">
-                    <mat-icon>favorite_border</mat-icon>
+                <button mat-raised-button class="buttonAddVote like" (click)='like()'>
+                    <mat-icon *ngIf='!isVoted'>favorite_border</mat-icon>
                     <mat-icon *ngIf="isVoted">favorite</mat-icon>
                 </button>
             </div>

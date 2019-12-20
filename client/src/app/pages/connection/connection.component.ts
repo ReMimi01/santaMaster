@@ -18,6 +18,7 @@ export class ConnectionComponent implements OnInit {
   constructor(private formbuilder : FormBuilder, private formulaireService: FormulaireService, private router: Router) { }
 
   ngOnInit() {
+    
   }
 
   login() {
@@ -34,7 +35,6 @@ export class ConnectionComponent implements OnInit {
         }
       }
       );
-
-    }
+  }
 
 }

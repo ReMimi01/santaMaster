@@ -30,5 +30,10 @@ export class FormulaireService {
     this.connectedUserValue = result;
   }
 
+  getAction(): Observable<any> {
+    return this.http.get(`${this.userUrl}/actions`);
+  }
+
+  
 
 }
